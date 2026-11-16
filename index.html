@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blake Kubena — Actor & Voice Over Artist</title>
+<meta name="description" content="Blake Kubena — American actor and voice over artist based in London. Vikings, Nuremberg, stage and voiceover work.">
+
+<!-- ============================================================
+     WHAT TO EDIT (search for the word "EDIT"):
+       • Booking email   (currently a placeholder)
+       • Headshot + hero photo  (drop files in assets/images/)
+       • Audio VO demos  (optional — drop files in assets/audio/)
+     Everything else is your real content, carried over from the
+     old Google Site.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0a0a0b; --bg-soft:#141416; --ink:#f5f3ef; --muted:#9a958c;
+    --gold:#c9a24b; --gold-soft:#e7cd8a; --line:rgba(255,255,255,.10); --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{font-weight:600;letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;color:var(--gold)}
+  h2.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,6vw,4rem);letter-spacing:.04em;line-height:1;margin:.4rem 0 2.2rem}
+
+  /* NAV */
+  header.nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(10px);background:rgba(10,10,11,.55);border-bottom:1px solid transparent;transition:.3s}
+  header.nav.scrolled{background:rgba(10,10,11,.92);border-color:var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.12em}
+  .brand span{color:var(--gold)}
+  nav.links{display:flex;gap:32px}
+  nav.links a{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+  nav.links a:hover{color:var(--ink)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--ink);font-size:1.5rem;cursor:pointer}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:flex-end;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:
+      linear-gradient(180deg,rgba(10,10,11,.35) 0%,rgba(10,10,11,.55) 55%,var(--bg) 100%),
+      radial-gradient(900px 500px at 70% 25%,rgba(201,162,75,.12),transparent 60%),
+      linear-gradient(135deg,#15161a,#0a0a0b);
+    background-size:cover;background-position:center}
+  /* EDIT: when you add a hero photo, this line uses it automatically:
+     set --hero in the .hero-bg style below */
+  .hero-bg.has-img{background-image:
+      linear-gradient(180deg,rgba(10,10,11,.30) 0%,rgba(10,10,11,.45) 55%,var(--bg) 100%),
+      url('assets/images/hero.jpg')}
+  .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:74px}
+  .hero .eyebrow{margin-bottom:16px}
+  .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.6rem,13vw,9rem);line-height:.88;letter-spacing:.02em}
+  .hero h1 .gold{color:var(--gold)}
+  .hero .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.2rem,2.6vw,1.7rem);color:#cfc9bf;margin-top:18px;max-width:34ch}
+  .profile-links{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap}
+  .profile-links a{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:3px;transition:.2s}
+  .profile-links a:hover{color:var(--gold);border-color:var(--gold)}
+
+  /* SECTIONS */
+  section.block{padding:104px 0;border-top:1px solid var(--line)}
+  .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;color:var(--muted);font-size:.78rem;letter-spacing:.06em;padding:24px;background:linear-gradient(135deg,#1a1a1d,#0e0e10);border:1px dashed var(--line);border-radius:3px;height:100%}
+  .placeholder .ph-icon{font-size:2rem;opacity:.5}
+  .placeholder code{color:var(--gold-soft);font-size:.7rem}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+  .headshot{aspect-ratio:4/5;border-radius:3px;overflow:hidden;border:1px solid var(--line);position:sticky;top:96px}
+  .headshot img{width:100%;height:100%;object-fit:cover}
+  .about p{color:#d8d4cc;margin-bottom:1.1rem;font-size:1.02rem}
+  .about p .hl{color:var(--ink);font-weight:400}
+
+  /* WORK */
+  .work-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+  .work-nav button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:11px 22px;border-radius:999px;font-family:inherit;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.2s}
+  .work-nav button:hover{color:var(--ink);border-color:rgba(201,162,75,.5)}
+  .work-nav button.active{background:var(--gold);color:#1a1407;border-color:var(--gold)}
+  .panel{display:none;animation:fade .4s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .credit-block{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:38px}
+  .credit-block:last-child{margin-bottom:0}
+  .credit-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .credit-head h3{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.9rem;letter-spacing:.04em}
+  .credit-head .yr{color:var(--gold);font-size:.85rem;letter-spacing:.14em}
+  .credit-role{color:var(--gold-soft);font-weight:500;letter-spacing:.02em}
+  .credit-block p{color:#cfc9bf;max-width:70ch}
+  .credit-block .meta{color:var(--muted);font-size:.9rem}
+
+  .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .video-frame{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#000}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vlabel{font-size:.82rem;color:var(--muted);margin-top:10px;letter-spacing:.04em}
+  .vlabel b{color:var(--ink);font-weight:500}
+
+  /* PRESS QUOTES */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .quote{background:var(--bg-soft);border:1px solid var(--line);border-left:2px solid var(--gold);border-radius:3px;padding:24px 26px}
+  .quote p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.18rem;color:#e8e3d9;line-height:1.5}
+  .quote .src{display:block;margin-top:14px;font-family:'Inter',sans-serif;font-style:normal;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+
+  .audio-list{display:grid;gap:14px;margin-top:22px}
+  .audio-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:3px;padding:18px 22px}
+  .audio-card .ac-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;gap:12px}
+  .audio-card .ac-tag{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+  audio{width:100%;filter:saturate(.6)}
+
+  /* CONTACT */
+  .contact{text-align:center}
+  .contact .big{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3.6rem);letter-spacing:.02em;margin:6px 0 8px}
+  .contact a.email{color:var(--gold);font-size:1.3rem;letter-spacing:.04em;border-bottom:1px solid transparent;transition:.2s}
+  .contact a.email:hover{border-color:var(--gold)}
+  .socials{display:flex;gap:24px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .socials a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+  .socials a:hover{color:var(--gold)}
+
+  footer{padding:38px 0;text-align:center;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line);letter-spacing:.06em}
+
+  @media(max-width:860px){
+    nav.links{position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:0;background:rgba(10,10,11,.98);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s}
+    nav.links.open{transform:translateY(0)}
+    nav.links a{padding:16px 28px;border-top:1px solid var(--line)}
+    .nav-toggle{display:block}
+    .about-grid{grid-template-columns:1fr;gap:36px}
+    .headshot{position:relative;top:0;max-width:330px;margin:0 auto}
+    .video-grid,.quotes{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">BLAKE<span>.</span>KUBENA</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#press">Press</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <!-- EDIT: drop a wide stage/film photo at assets/images/hero.jpg, then add
+       the class "has-img" to the div below: <div class="hero-bg has-img"> -->
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Actor &nbsp;·&nbsp; Voice Over Artist</div>
+    <h1>BLAKE<br><span class="gold">KUBENA</span></h1>
+    <p class="tagline">American actor and voice over artist, based in London.</p>
+    <p class="eyebrow" style="margin-top:22px;color:var(--gold-soft)">Sgt. Powell — <em>Nuremberg</em> &nbsp;·&nbsp; Prince Askold — <em>Vikings</em></p>
+    <div class="profile-links">
+      <a href="http://www.spotlight.com/3494-4506-5976" target="_blank" rel="noopener">Spotlight</a>
+      <a href="https://www.imdb.com/name/nm9386976/" target="_blank" rel="noopener">IMDb</a>
+      <a href="https://www.backstage.com/u/blake-kubena" target="_blank" rel="noopener">Backstage</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="eyebrow">01 — About</div>
+    <h2 class="section-title">Biography</h2>
+    <div class="about-grid">
+      <div class="headshot">
+        <!-- EDIT: replace placeholder with your headshot.
+             Drop file at assets/images/headshot.jpg and uncomment: -->
+        <!-- <img src="assets/images/headshot.jpg" alt="Blake Kubena"> -->
+        <div class="placeholder"><div class="ph-icon">◑</div><div>HEADSHOT</div><code>assets/images/headshot.jpg</code></div>
+      </div>
+      <div class="about">
+        <p><span class="hl">Blake Kubena is an American actor, voice artist and teacher of Shakespeare. Born in Texas, he is based in London.</span></p>
+        <p>On screen, Blake plays Sgt. Powell in <em>Nuremberg</em> (2025), James Vanderbilt's World War II drama for Sony Pictures Classics, alongside Russell Crowe, Rami Malek, Michael Shannon, Richard E. Grant, Leo Woodall and John Slattery. The film was an Official Selection at the Toronto, San Sebasti&aacute;n, Zurich and AFI film festivals.</p>
+        <p>He is also known to television audiences as Prince Askold in the sixth and final season of History's <em>Vikings</em>, available worldwide on Prime Video. Other screen work includes Ferris in <em>After Anyuta</em>, from <em>NUDES: The Anthology</em>, which earned him a Best Supporting Actor nomination at the North Europe International Film Festival.</p>
+        <p>As a voice artist, Blake's credits include EA's <em>Star Wars Battlefront II</em>, ADR for Direct Line's <em>RoboCop</em> commercial, an adidas promo for Major League Soccer, the Canadian voice of Rexona, and a corporate film for Zaha Hadid Architects' Bee'ah headquarters. He also did performance capture for nDreams' VR title <em>Phantom: Covert Ops</em> (2020).</p>
+        <p>Blake's stage work has a strong classical focus. He played the title role in Blackeyed Theatre's UK tour of <em>The Strange Case of Dr. Jekyll &amp; Mr. Hyde</em>, and Malcolm and Dromio of Syracuse with The Pop-up Globe in Auckland and Sydney. As an Associate Artist of Heady Conduct, he played Angelo at the Rose Playhouse and Parolles at the Minack Theatre. Other credits include Malcolm for the Factory Theatre Company and Horatio at the Midsummer Scene Festival in Dubrovnik. In the US, he was an Equity company member of the Alabama Shakespeare Festival, playing Antipholus of Syracuse, Cassio and Buckingham, and worked with the Shakespeare Theatre of New Jersey.</p>
+        <p>Blake holds an MA with Distinction from the Royal Central School of Speech and Drama and a BFA, <em>summa cum laude</em>, from the University of Cincinnati College-Conservatory of Music. He teaches Shakespeare on the London Theatre Programme at the British American Drama Academy (BADA).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="block" id="work">
+  <div class="wrap">
+    <div class="eyebrow">02 — Selected Work</div>
+    <h2 class="section-title">My Work</h2>
+
+    <div class="work-nav">
+      <button class="active" data-panel="film">Film</button>
+      <button data-panel="tv">Television</button>
+      <button data-panel="theatre">Theatre</button>
+      <button data-panel="vo">Voice Over</button>
+    </div>
+
+    <!-- FILM -->
+    <div class="panel active" id="film">
+      <div class="credit-block">
+        <div class="credit-head"><h3>Nuremberg</h3><span class="yr">2025</span></div>
+        <div class="credit-role">Sgt. Powell</div>
+        <p>An epic World War II thriller based on true events, directed by James Vanderbilt. Starring Russell Crowe, Rami Malek, Leo Woodall, John Slattery, Mark O'Brien, Richard E. Grant and Michael Shannon.</p>
+        <div class="meta">Sony Pictures Classics · Official Selection: TIFF, AFI Fest, San Sebastián (SSIFF), Zurich Film Festival</div>
+      </div>
+      <div class="credit-block">
+        <div class="credit-head"><h3>After Anyuta</h3><span class="yr">2018</span></div>
+        <div class="credit-role">Ferris</div>
+        <p>London, 2019. Anyuta spends the day posing as a life model for both her lover, medical student Steven, and neighbouring artist Ferris. Inspired by Anton Chekhov's short story <em>Anyuta</em> (1886). Chapter One in <em>NUDES: The Anthology</em>.</p>
+        <div class="meta">Nominated — Best Supporting Actor in a Short Film, North Europe International Film Festival (2020) · Created by Clemy Clarke &amp; C.C. Kellogg</div>
+      </div>
+    </div>
+
+    <!-- TELEVISION -->
+    <div class="panel" id="tv">
+      <div class="credit-block">
+        <div class="credit-head"><h3>Vikings</h3><span class="yr">Season 6</span></div>
+        <div class="credit-role">Prince Askold</div>
+        <p>Prince Askold in the sixth and final season of History's <em>Vikings</em>, created by Michael Hirst.</p>
+        <div class="meta">History · Available worldwide on Prime Video.</div>
+      </div>
+    </div>
+
+    <!-- THEATRE -->
+    <div class="panel" id="theatre">
+      <div class="credit-block">
+        <div class="credit-head"><h3>The Strange Case of Dr. Jekyll &amp; Mr. Hyde</h3></div>
+        <div class="credit-role">Title Role — Dr. Jekyll / Mr. Hyde</div>
+        <p>UK touring production with Blackeyed Theatre Company.</p>
+      </div>
+      <div class="credit-block">
+        <div class="credit-head"><h3>Sherlock Holmes and The Valley of Fear</h3></div>
+        <div class="credit-role">Jack McMurdo</div>
+        <p>UK tour with Blackeyed Theatre Company.</p>
+      </div>
+      <div class="credit-block">
+        <div class="credit-head"><h3>Selected Stage Roles</h3></div>
+        <p>Malcolm in <em>Macbeth</em> (Factory Theatre Company &amp; The Pop-up Globe); Dromio of Syracuse in <em>The Comedy of Errors</em>; Angelo in <em>Measure for Measure</em> and Parolles in <em>All's Well That Ends Well</em> (Heady Conduct, Rose Playhouse &amp; Minack Theatre); Horatio in <em>Hamlet</em> (Midsummer Scene Festival, Dubrovnik); Antipholus of Syracuse, Cassio in <em>Othello</em> &amp; Buckingham in <em>The Three Musketeers</em> (Alabama Shakespeare Festival).</p>
+      </div>
+      <p style="color:var(--muted);font-size:.85rem;letter-spacing:.04em">See <a href="#press" style="color:var(--gold-soft);border-bottom:1px solid var(--line)">Press</a> for reviews.</p>
+    </div>
+
+    <!-- VOICE OVER -->
+    <div class="panel" id="vo">
+      <div class="credit-block">
+        <div class="credit-head"><h3>Selected Voice Credits</h3></div>
+        <p><span class="credit-role">Games</span> — <em>Star Wars Battlefront II</em> (EA) · <em>Phantom: Covert Ops</em> (nDreams, performance capture)</p>
+        <p><span class="credit-role">Commercial</span> — Direct Line <em>RoboCop</em> (ADR) · MLS / adidas promo · Rexona, Unilever (Canadian voice)</p>
+        <p><span class="credit-role">Corporate</span> — Bee'ah Headquarters, for Zaha Hadid Architects</p>
+      </div>
+      <div class="credit-block">
+        <div class="credit-head"><h3>Adverts &amp; Corporate</h3></div>
+      </div>
+      <div class="video-grid">
+        <div>
+          <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Z06NH1B7YZU" title="Direct Line advert - RoboCop" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="vlabel"><b>Direct Line — RoboCop</b> · advert (ADR)</div>
+        </div>
+        <div>
+          <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/BC_yZ9g6F18" title="MLS Adidas Promo" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="vlabel"><b>MLS · Adidas Promo</b> · ft. David Villa, Kaká &amp; Yura Movsisyan</div>
+        </div>
+        <div>
+          <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/C8rq23E8vzs" title="Bee'ah Head Quarters Video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="vlabel"><b>Bee'ah HQ</b> · corporate film for Zaha Hadid Architects</div>
+        </div>
+        <div>
+          <div class="placeholder" style="aspect-ratio:16/9">
+            <div class="ph-icon">★</div>
+            <div><b style="color:var(--ink)">Star Wars: Battlefront II</b> — EA (video game)</div>
+            <a href="https://pro.imdb.com/title/tt5710996/" target="_blank" rel="noopener"><code>view on IMDb</code></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="credit-block" style="margin-top:40px">
+        <div class="credit-head"><h3>Demo Reels</h3></div>
+      </div>
+      <!-- EDIT (optional): drop audio demos in assets/audio/ to activate these players -->
+      <div class="audio-list">
+        <div class="audio-card">
+          <div class="ac-head"><span style="font-weight:500">Commercial Demo</span><span class="ac-tag">Commercial</span></div>
+          <audio controls preload="none"><source src="assets/audio/commercial-demo.mp3" type="audio/mpeg">Your browser does not support audio.</audio>
+        </div>
+        <div class="audio-card">
+          <div class="ac-head"><span style="font-weight:500">Narration Demo</span><span class="ac-tag">Narration</span></div>
+          <audio controls preload="none"><source src="assets/audio/narration-demo.mp3" type="audio/mpeg">Your browser does not support audio.</audio>
+        </div>
+        <div class="audio-card">
+          <div class="ac-head"><span style="font-weight:500">Character Demo</span><span class="ac-tag">Character / Animation</span></div>
+          <audio controls preload="none"><source src="assets/audio/character-demo.mp3" type="audio/mpeg">Your browser does not support audio.</audio>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="block" id="press">
+  <div class="wrap">
+    <div class="eyebrow">03 — Press</div>
+    <h2 class="section-title">Reviews</h2>
+    <p style="color:var(--muted);margin-bottom:24px;letter-spacing:.02em">On the title role in <em>The Strange Case of Dr. Jekyll &amp; Mr. Hyde</em>:</p>
+    <div class="quotes">
+      <div class="quote"><p>"Blake Kubena in the title roles is reminiscent of a lavishly bewigged Patrick Stewart."<span class="src">The Daily Mail</span></p></div>
+      <div class="quote"><p>"New to the show is the impressive Blake Kubena as Jekyll and Hyde. He was well-cast, both physically and for his nuanced interpretation. He cuts quite a thrilling dash as the 'twisted' scientist who transforms in a moment into the utterly amoral Hyde."<span class="src">The Spy in the Stalls</span></p></div>
+      <div class="quote"><p>"The standout, of course, is Kubena, who deftly balances the duality of his part with energy and verve."<span class="src">The Upcoming</span></p></div>
+      <div class="quote"><p>"Blake Kubena excels in the titular roles. His performance kept the audience gripped on every word."<span class="src">Style of the City, Cardiff</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block" id="contact">
+  <div class="wrap contact">
+    <div class="eyebrow">04 — Booking</div>
+    <div class="big">GET IN TOUCH</div>
+    <p style="color:var(--muted);max-width:46ch;margin:0 auto 22px">For casting, bookings and voiceover session enquiries.</p>
+    <!-- EDIT: replace with your real booking / agent email -->
+    <a class="email" href="mailto:hello@blakekubena.com">hello@blakekubena.com</a>
+    <div class="socials">
+      <a href="http://www.spotlight.com/3494-4506-5976" target="_blank" rel="noopener">Spotlight</a>
+      <a href="https://www.imdb.com/name/nm9386976/" target="_blank" rel="noopener">IMDb</a>
+      <a href="https://www.backstage.com/u/blake-kubena" target="_blank" rel="noopener">Backstage</a>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Blake Kubena · Actor &amp; Voice Over Artist</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+  const toggle = document.getElementById('navToggle'), links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  // work tabs
+  document.querySelectorAll('.work-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.work-nav button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.panel).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
